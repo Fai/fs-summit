@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+
+import Card from '../components/Card';
 
 const Events = () => {
   return (
     <View style={styles.container}>
-      <Text>Events</Text>
-      <StatusBar style="auto" />
+      <Card />
     </View>
   );
 }
