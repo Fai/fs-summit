@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import Card from '../components/Card';
+import mock from '../data';
 
 const Events = () => {
   return (
-    <View style={styles.container}>
-      <Card />
+    <View>
+        <FlatList
+            data={mock}
+            renderItem={({ item }) => <Card data={item} />}
+            keyExtractor={item => item.id}
+        />
     </View>
   );
 }

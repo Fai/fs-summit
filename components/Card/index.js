@@ -5,13 +5,14 @@ import mock from '../../data'
 
 class Card extends React.Component {
   render() {
+    const { data } = this.props
     return (
         <View style={styles.wrap}>
-            <Image style={styles.image} source={{uri: mock[0].image}}></Image>
+            <Image style={styles.image} source={{uri: data.image}}></Image>
             <View style={styles.right}>
-              <Text style={styles.title}>{mock[0].title}</Text>
-              <Text style={styles.speaker}>{mock[0].speaker}</Text>
-              <Text style={styles.date}>{mock[0].date}</Text>
+              <Text style={styles.title}>{data.title}</Text>
+              <Text style={styles.speaker}>{data.speaker}</Text>
+              <Text style={styles.date}>{data.date} / {data.time}</Text>
             </View>
         </View>
     )
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     },
     date: {
         marginTop: 5,
-        fontSize: 16,
+        fontSize: 12,
     }
 });
 
