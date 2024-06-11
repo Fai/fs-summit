@@ -3,13 +3,20 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import Tab from './tab';
 
 class Tabs extends React.Component {
+    state = {
+        selected: 'All',
+    }
+    select = (selected) => {
+        this.setState({selected})
+    }
     render() {
+        const { selected } = this.state;
         return (
             <View style={styles.container}>
-                <Tab selected={true}>All</Tab>
-                <Tab selected={false}>Friday</Tab>
-                <Tab selected={false}>Saturday</Tab>
-                <Tab selected={false}>Sunday</Tab>
+                <Tab select={() => this.select('All')} selected={selected === 'All'}>All</Tab>
+                <Tab select={() => this.select('Friday')} selected={selected === 'Friday'}>Friday</Tab>
+                <Tab select={() => this.select('Saturday')} selected={selected === 'Saturday'}>Saturday</Tab>
+                <Tab select={() => this.select('Sunday')} selected={selected === 'Sunday'}>Sunday</Tab>
             </View>
         );
     }
