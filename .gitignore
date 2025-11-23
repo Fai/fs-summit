@@ -33,3 +33,13 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# environment variables
+.env
+.env.production
+
+# logs
+*.log
+
+# expo-shared
+.expo-shared/
